@@ -1,0 +1,35 @@
+#include <iostream>
+using namespace std;
+ void check(int arr[],int s)
+{
+    for(int k=0;k<s-1;k++)
+    {
+        for(int p=k+1;p<=s-1;p++)
+        {
+            int sum=arr[k]+arr[p];
+
+            if(sum==arr[s])
+            {
+
+
+                cout<<k<<","<<p<<","<<s<<endl;
+            }
+        }
+    }
+}
+int main()
+{
+    int n;
+    cin>>n;
+    int arr[n];
+    for(int i=0;i<n;i++)
+    cin>>arr[i];
+    for(int j=0;j<n;j++)
+    {
+        int s=n-1;
+        check(arr,s);
+        s=n-j-1;
+    }
+    return 0;
+
+}
